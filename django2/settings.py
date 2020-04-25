@@ -97,7 +97,7 @@ DATABASES = {
 
 #Se for usar PostegreSQL usa esse:
 DATABASES = {
-            'default': dj_database_url.config()
+    'default': dj_database_url.config()
 }
 
 # Password validation
