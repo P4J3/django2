@@ -1,0 +1,42 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostra Cliente</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <h1>Mostra Cliente</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Registro</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for cliente in clientes%}
+            <tr>
+                <td>
+                    {{cliente.nome}} {{cliente.sobrenome}}
+                </td>
+                <td>
+                    {{cliente.registro}}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    <br/>
+    <h3><a href="{% url 'cliente' %}">Cadatrar Novo Cliente</a></h3>
+    <h3><a href="{% url 'index' %}">Início</a></h3>
+    <h3><a href="{% url 'contato' %}">Contato</a></h3>
+    <h3><a href="{% url 'produto' %}">Produto</a></h3>
+
+
+    {% bootstrap_javascript jquery='full' %}
+</body>
+</html>
